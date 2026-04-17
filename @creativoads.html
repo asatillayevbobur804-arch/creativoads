@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CreativoAds</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#0B0F19;
+  color:white;
+}
+
+header {
+  display:flex;
+  justify-content:space-between;
+  padding:20px 40px;
+}
+
+.logo {
+  font-size:24px;
+  font-weight:bold;
+}
+
+.lang {
+  cursor:pointer;
+}
+
+.hero {
+  text-align:center;
+  padding:100px 20px;
+  background: linear-gradient(135deg,#2563EB,#7C3AED);
+}
+
+.hero h1 {
+  font-size:40px;
+}
+
+.btn {
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 25px;
+  border-radius:8px;
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+  background:linear-gradient(135deg,#2563EB,#7C3AED);
+}
+
+.section {
+  padding:60px 20px;
+  text-align:center;
+}
+
+.cards {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.card {
+  background:#111827;
+  padding:20px;
+  border-radius:10px;
+  width:250px;
+}
+
+footer {
+  text-align:center;
+  padding:20px;
+  background:#020617;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+  <div class="logo">CreativoAds</div>
+  <div class="lang" onclick="toggleLang()">EN / UZ</div>
+</header>
+
+<section class="hero">
+  <h1 id="title">We Create Ads That Convert</h1>
+  <p id="desc">High-converting landing pages and banner designs</p>
+  <a href="https://t.me/creativoads" class="btn">Contact on Telegram</a>
+</section>
+
+<section class="section">
+  <h2 id="services">Our Services</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Landing Page</h3>
+      <p>Modern high-converting design</p>
+    </div>
+    <div class="card">
+      <h3>Banner Ads</h3>
+      <p>Creative banners for ads</p>
+    </div>
+    <div class="card">
+      <h3>Ad Package</h3>
+      <p>Full marketing package</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 id="contact">Contact</h2>
+  <a href="https://t.me/creativoads" class="btn">Telegram</a><br><br>
+  <a href="tel:+998701651406" class="btn">Call Now</a>
+</section>
+
+<footer>
+  © 2026 CreativoAds
+</footer>
+
+<script>
+let lang = "en";
+
+function toggleLang(){
+  if(lang === "en"){
+    document.getElementById("title").innerText = "Biz reklama orqali mijoz olib kelamiz";
+    document.getElementById("desc").innerText = "Sotuv olib keladigan landing page va bannerlar";
+    document.getElementById("services").innerText = "Xizmatlarimiz";
+    document.getElementById("contact").innerText = "Aloqa";
+    lang = "uz";
+  } else {
+    document.getElementById("title").innerText = "We Create Ads That Convert";
+    document.getElementById("desc").innerText = "High-converting landing pages and banner designs";
+    document.getElementById("services").innerText = "Our Services";
+    document.getElementById("contact").innerText = "Contact";
+    lang = "en";
+  }
+}
+</script>
+
+</body>
+</html>
