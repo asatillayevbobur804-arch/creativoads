@@ -1,140 +1,1646 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CreativoAds</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CreativoAds — Premium 3D Agency</title>
 
 <style>
-body {
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#0B0F19;
-  color:white;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-header {
-  display:flex;
-  justify-content:space-between;
-  padding:20px 40px;
+html{
+scroll-behavior:smooth;
 }
 
-.logo {
-  font-size:24px;
-  font-weight:bold;
+body{
+font-family:Arial,sans-serif;
+background:#050816;
+color:white;
+overflow-x:hidden;
 }
 
-.lang {
-  cursor:pointer;
+a{
+text-decoration:none;
+color:inherit;
 }
 
-.hero {
-  text-align:center;
-  padding:100px 20px;
-  background: linear-gradient(135deg,#2563EB,#7C3AED);
+.bg{
+position:fixed;
+inset:0;
+z-index:-1;
+
+background:
+radial-gradient(circle at 20% 10%,#7c3cff66,transparent 30%),
+radial-gradient(circle at 80% 20%,#00d4ff55,transparent 30%),
+radial-gradient(circle at 50% 90%,#ff3cac44,transparent 35%),
+#050816;
+
+animation:hue 8s infinite alternate;
 }
 
-.hero h1 {
-  font-size:40px;
+@keyframes hue{
+to{
+filter:hue-rotate(35deg);
+}
 }
 
-.btn {
-  display:inline-block;
-  margin-top:20px;
-  padding:12px 25px;
-  border-radius:8px;
-  text-decoration:none;
-  color:white;
-  font-weight:bold;
-  background:linear-gradient(135deg,#2563EB,#7C3AED);
+.container{
+width:min(1150px,92%);
+margin:auto;
 }
 
-.section {
-  padding:60px 20px;
-  text-align:center;
+nav{
+position:fixed;
+top:14px;
+left:50%;
+transform:translateX(-50%);
+width:min(1150px,92%);
+z-index:10;
+
+background:#050816cc;
+backdrop-filter:blur(16px);
+
+border:1px solid #ffffff24;
+border-radius:24px;
+
+padding:14px 18px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-.cards {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
+.logo{
+font-size:22px;
+font-weight:900;
+
+background:linear-gradient(90deg,#00d4ff,#ff3cac);
+-webkit-background-clip:text;
+color:transparent;
 }
 
-.card {
-  background:#111827;
-  padding:20px;
-  border-radius:10px;
-  width:250px;
+.links{
+display:flex;
+gap:18px;
+color:#c7cbe0;
+font-weight:700;
+font-size:14px;
 }
 
-footer {
-  text-align:center;
-  padding:20px;
-  background:#020617;
+.links a:hover{
+color:white;
 }
+
+.lang button,
+.menu{
+border:1px solid #ffffff33;
+background:#ffffff14;
+color:white;
+
+border-radius:12px;
+
+padding:8px 10px;
+
+font-weight:900;
+}
+
+.lang .active{
+background:white;
+color:#050816;
+}
+
+.menu{
+display:none;
+font-size:20px;
+}
+
+.hero{
+min-height:100vh;
+padding:145px 0 80px;
+
+display:flex;
+align-items:center;
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1.05fr .95fr;
+gap:42px;
+align-items:center;
+}
+
+.badge{
+display:inline-flex;
+gap:9px;
+align-items:center;
+
+background:#ffffff14;
+border:1px solid #ffffff24;
+
+border-radius:999px;
+
+padding:10px 14px;
+
+color:#c7cbe0;
+font-weight:800;
+
+margin-bottom:22px;
+}
+
+.dot{
+width:8px;
+height:8px;
+border-radius:50%;
+
+background:#20e3b2;
+box-shadow:0 0 18px #20e3b2;
+}
+
+h1{
+font-size:clamp(42px,7vw,82px);
+line-height:.98;
+
+letter-spacing:-3px;
+
+margin-bottom:24px;
+}
+
+.grad{
+background:linear-gradient(120deg,#fff,#00d4ff,#ff3cac);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.lead{
+font-size:18px;
+line-height:1.8;
+
+color:#c0c6dc;
+
+max-width:650px;
+
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-flex;
+
+padding:15px 22px;
+
+border-radius:18px;
+border:1px solid #ffffff26;
+
+font-weight:900;
+
+margin:6px;
+
+transition:.25s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+.primary{
+background:linear-gradient(135deg,#00d4ff,#fff);
+color:#050816;
+}
+
+.dark{
+background:#ffffff16;
+}
+
+.hero3d{
+height:520px;
+
+border-radius:38px;
+border:1px solid #ffffff26;
+
+background:linear-gradient(145deg,#ffffff24,#ffffff0a);
+
+position:relative;
+overflow:hidden;
+
+box-shadow:0 25px 80px #0008;
+
+animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+50%{
+transform:
+translateY(-14px)
+rotateX(4deg)
+rotateY(-5deg);
+}
+}
+
+.orb1,
+.orb2{
+position:absolute;
+border-radius:50%;
+}
+
+.orb1{
+width:230px;
+height:230px;
+
+left:55px;
+top:60px;
+
+background:
+radial-gradient(circle at 30% 30%,white,#00d4ff,#7c3cff);
+
+box-shadow:0 0 80px #00d4ff77;
+
+animation:spin 12s linear infinite;
+}
+
+.orb2{
+width:150px;
+height:150px;
+
+right:50px;
+top:170px;
+
+background:
+radial-gradient(circle at 30% 30%,white,#ff3cac,#7c3cff);
+
+animation:up 5s ease-in-out infinite;
+}
+
+.cube{
+position:absolute;
+
+right:105px;
+bottom:80px;
+
+width:135px;
+height:135px;
+
+border-radius:34px;
+
+background:
+linear-gradient(135deg,#ffffff55,#ffffff10);
+
+border:1px solid #ffffff40;
+
+transform:
+rotateX(55deg)
+rotateZ(42deg);
+
+box-shadow:0 35px 70px #0008;
+
+animation:cube 7s ease-in-out infinite;
+}
+
+@keyframes spin{
+to{
+transform:rotate(360deg);
+}
+}
+
+@keyframes up{
+50%{
+transform:translateY(-28px);
+}
+}
+
+@keyframes cube{
+50%{
+transform:
+rotateX(60deg)
+rotateZ(55deg)
+translateY(-25px);
+}
+}.panel{
+position:absolute;
+
+left:35px;
+right:35px;
+bottom:32px;
+
+padding:22px;
+
+border-radius:26px;
+
+background:#050816b8;
+
+border:1px solid #ffffff24;
+}
+
+.mini-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+}
+
+.mini{
+padding:14px;
+
+border-radius:18px;
+
+background:#ffffff14;
+
+text-align:center;
+}
+
+.mini b{
+font-size:23px;
+}
+
+.mini small{
+display:block;
+color:#c0c6dc;
+}
+
+section{
+padding:90px 0;
+}
+
+.title{
+text-align:center;
+margin-bottom:45px;
+}
+
+.title h2{
+font-size:clamp(32px,5vw,58px);
+margin-bottom:14px;
+}
+
+.title p{
+color:#c0c6dc;
+line-height:1.8;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.card,
+.glass{
+padding:28px;
+
+border-radius:28px;
+
+background:#ffffff14;
+
+border:1px solid #ffffff24;
+
+box-shadow:0 20px 60px #0004;
+
+transition:.28s;
+}
+
+.card:hover{
+transform:
+translateY(-10px)
+rotateX(4deg)
+rotateY(-4deg);
+
+background:#ffffff22;
+}
+
+.icon{
+width:56px;
+height:56px;
+
+border-radius:18px;
+
+background:
+linear-gradient(135deg,#7c3cff,#00d4ff);
+
+display:grid;
+place-items:center;
+
+font-size:25px;
+
+margin-bottom:18px;
+}
+
+.card h3{
+font-size:22px;
+margin-bottom:12px;
+}
+
+.card p,
+.glass p{
+color:#c0c6dc;
+line-height:1.7;
+}
+
+.price{
+font-size:38px;
+font-weight:900;
+
+color:#00d4ff;
+
+margin:18px 0;
+}
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:24px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+
+margin-top:20px;
+}
+
+.stat{
+padding:18px;
+
+border-radius:18px;
+
+background:#ffffff14;
+
+text-align:center;
+}
+
+.stat b{
+font-size:30px;
+}
+
+.work{
+min-height:230px;
+
+border-radius:30px;
+
+padding:24px;
+
+background:
+linear-gradient(135deg,#7c3cff88,#00d4ff33);
+
+border:1px solid #ffffff24;
+
+display:flex;
+flex-direction:column;
+justify-content:end;
+}
+
+.faq{
+max-width:900px;
+margin:auto;
+}
+
+.faq-item{
+margin:12px 0;
+
+border:1px solid #ffffff24;
+border-radius:20px;
+
+background:#ffffff14;
+
+overflow:hidden;
+}
+
+.faq-q{
+width:100%;
+
+padding:19px;
+
+background:transparent;
+
+color:white;
+
+border:0;
+
+text-align:left;
+
+font-size:17px;
+font-weight:900;
+}
+
+.faq-a{
+display:none;
+
+padding:0 19px 19px;
+
+color:#c0c6dc;
+}
+
+.open .faq-a{
+display:block;
+}
+
+.contact{
+text-align:center;
+
+padding:42px;
+
+border-radius:36px;
+
+background:
+linear-gradient(135deg,#7c3cff55,#00d4ff22);
+
+border:1px solid #ffffff24;
+}
+
+footer{
+text-align:center;
+color:#c0c6dc;
+
+padding:32px;
+
+border-top:1px solid #ffffff24;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(35px);
+
+transition:.7s;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:900px){
+
+.links{
+position:absolute;
+
+top:75px;
+left:0;
+right:0;
+
+display:none;
+flex-direction:column;
+
+background:#050816f5;
+
+padding:20px;
+
+border-radius:24px;
+
+border:1px solid #ffffff24;
+}
+
+.links.open{
+display:flex;
+}
+
+.menu{
+display:block;
+}
+
+.hero-grid,
+.about,
+.grid{
+grid-template-columns:1fr;
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+.hero3d{
+height:430px;
+}
+
+.mini-grid{
+grid-template-columns:1fr;
+}
+
+h1{
+letter-spacing:-2px;
+}
+}
+
 </style>
-
 </head>
+
 <body>
 
-<header>
-  <div class="logo">CreativoAds</div>
-  <div class="lang" onclick="toggleLang()">EN / UZ</div>
+<div class="bg"></div>
+
+<nav>
+
+<a class="logo" href="#home">
+CreativoAds
+</a>
+
+<div class="links" id="links">
+
+<a href="#about">
+Biz haqimizda
+</a>
+
+<a href="#services">
+Xizmatlar
+</a>
+
+<a href="#pricing">
+Narxlar
+</a>
+
+<a href="#portfolio">
+Portfolio
+</a>
+
+<a href="#contact">
+Aloqa
+</a>
+
+</div>
+
+<div>
+
+<span class="lang">
+
+<button class="active">
+UZ
+</button>
+
+<button>
+RU
+</button>
+
+<button>
+EN
+</button>
+
+</span>
+
+<button class="menu">
+☰
+</button>
+
+</div>
+
+</nav>
+
+<header class="hero" id="home">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="badge">
+
+<span class="dot"></span>
+
+<span>
+Premium creative agency
+</span>
+
+</div>
+
+<h1>
+
+Brendingizni
+
+<br>
+
+<span class="grad">
+3D kreativ reklama
+</span>
+
+<br>
+
+bilan kuchaytiramiz
+
+</h1>
+
+<p class="lead">
+
+CreativoAds — reklama,
+branding,
+SMM,
+web dizayn
+va video kreativlar orqali
+biznesingizni zamonaviy darajaga olib chiqadigan premium agentlik.
+
+</p>
+
+<a class="btn primary">
+Loyihani boshlash
+</a>
+
+<a class="btn dark">
+Narxlarni ko‘rish
+</a>
+
+</div>
+<div class="hero3d">
+
+<div class="orb1"></div>
+
+<div class="orb2"></div>
+
+<div class="cube"></div>
+
+<div class="panel">
+
+<div class="mini-grid">
+
+<div class="mini">
+<b>100+</b>
+<small>Loyihalar</small>
+</div>
+
+<div class="mini">
+<b>50+</b>
+<small>Mijozlar</small>
+</div>
+
+<div class="mini">
+<b>24/7</b>
+<small>Support</small>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </header>
 
-<section class="hero">
-  <h1 id="title">We Create Ads That Convert</h1>
-  <p id="desc">High-converting landing pages and banner designs</p>
-  <a href="https://t.me/creativoads" class="btn">Contact on Telegram</a>
+<section id="about">
+
+<div class="container about">
+
+<div class="glass">
+
+<h2>
+Biz haqimizda
+</h2>
+
+<p>
+
+CreativoAds —
+kreativlik,
+innovatsiya
+va natijani
+birlashtiradigan
+zamonaviy reklama agentligi.
+
+</p>
+
+<p>
+
+Biz oddiy reklama emas,
+odamlar eslab qoladigan
+kuchli brend tajribalarini yaratamiz.
+
+</p>
+
+</div>
+
+<div class="glass">
+
+<h2 class="grad">
+CreativoAds
+</h2>
+
+<p>
+
+Sizning biznesingiz uchun
+professional vizual uslub,
+reklama strategiyasi
+va raqamli yechimlar ishlab chiqamiz.
+
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<b>3+</b>
+<span>Yil tajriba</span>
+</div>
+
+<div class="stat">
+<b>100+</b>
+<span>Ishlar</span>
+</div>
+
+<div class="stat">
+<b>50+</b>
+<span>Mijozlar</span>
+</div>
+
+<div class="stat">
+<b>5★</b>
+<span>Sifat</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="section">
-  <h2 id="services">Our Services</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Landing Page</h3>
-      <p>Modern high-converting design</p>
-    </div>
-    <div class="card">
-      <h3>Banner Ads</h3>
-      <p>Creative banners for ads</p>
-    </div>
-    <div class="card">
-      <h3>Ad Package</h3>
-      <p>Full marketing package</p>
-    </div>
-  </div>
+<section id="services">
+
+<div class="container">
+
+<div class="title">
+
+<h2>
+Xizmatlarimiz
+</h2>
+
+<p>
+Biznesingiz uchun kerak bo‘ladigan barcha kreativ va digital xizmatlar.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="icon">
+🎨
+</div>
+
+<h3>
+Grafik dizayn
+</h3>
+
+<p>
+Banner,
+post,
+logo
+va professional vizual materiallar.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">
+📱
+</div>
+
+<h3>
+SMM marketing
+</h3>
+
+<p>
+Instagram,
+TikTok
+va boshqa platformalar uchun strategiya.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">
+🎬
+</div>
+
+<h3>
+Video reklama
+</h3>
+
+<p>
+Motion design
+va kuchli reklama videolari.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">
+🚀
+</div>
+
+<h3>
+Branding
+</h3>
+
+<p>
+Biznesingiz uchun premium identika va uslub.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">
+💻
+</div>
+
+<h3>
+Web dizayn
+</h3>
+
+<p>
+Modern,
+responsive
+va tez ishlaydigan saytlar.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">
+✨
+</div>
+
+<h3>
+3D effektlar
+</h3>
+
+<p>
+Saytingizga premium 3D animatsiyalar va hover effektlar.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="section">
-  <h2 id="contact">Contact</h2>
-  <a href="https://t.me/creativoads" class="btn">Telegram</a><br><br>
-  <a href="tel:+998701651406" class="btn">Call Now</a>
+<section id="pricing">
+
+<div class="container">
+
+<div class="title">
+
+<h2>
+Narxlar
+</h2>
+
+<p>
+Biznesingiz uchun mos premium tariflar.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="icon">
+🔥
+</div>
+
+<h3>
+Starter
+</h3>
+
+<p>
+Logo dizayn,
+5 ta post
+va basic branding.
+</p>
+
+<div class="price">
+650 000 so‘m
+</div>
+
+<a class="btn dark">
+Buyurtma berish
+</a>
+
+</div>
+
+<div class="card">
+
+<div class="icon">
+🚀
+</div>
+
+<h3>
+Business
+</h3>
+
+<p>
+SMM dizayn,
+branding
+va reklama kreativlari.
+</p>
+
+<div class="price">
+1 950 000 so‘m
+</div>
+
+<a class="btn primary">
+Buyurtma berish
+</a>
+
+</div>
+
+<div class="card">
+
+<div class="icon">
+👑
+</div>
+
+<h3>
+Premium
+</h3>
+
+<p>
+To‘liq premium web sayt,
+3D effektlar
+va marketing.
+</p>
+
+<div class="price">
+3 900 000 so‘m
+</div>
+
+<a class="btn dark">
+Buyurtma berish
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="portfolio">
+
+<div class="container">
+
+<div class="title">
+
+<h2>
+Portfolio
+</h2>
+
+<p>
+So‘nggi kreativ yo‘nalishlarimiz.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="work">
+<h3>Social Media Design</h3>
+<p>Instagram / TikTok creatives</p>
+</div>
+
+<div class="work">
+<h3>Brand Identity</h3>
+<p>Logo / Color / Style</p>
+</div>
+
+<div class="work">
+<h3>Landing Page</h3>
+<p>Premium website UI</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="faq">
+
+<div class="container">
+
+<div class="title">
+
+<h2>
+Ko‘p so‘raladigan savollar
+</h2>
+
+<p>
+Mijozlarimiz eng ko‘p so‘raydigan savollar.
+</p>
+
+</div>
+
+<div class="faq">
+
+<div class="faq-item open">
+
+<button class="faq-q">
+Qanday xizmatlar bor? +
+</button>
+
+<div class="faq-a">
+Branding,
+SMM,
+grafik dizayn,
+video reklama,
+web dizayn
+va 3D effektlar.
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-q">
+Loyiha qancha vaqtda tugaydi? +
+</button>
+
+<div class="faq-a">
+Loyiha turiga qarab odatda
+2 kundan 2 haftagacha.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact">
+
+<h2>
+Keling, birga ishlaymiz
+</h2>
+
+<p class="lead" style="margin:16px auto">
+
+Biznesingiz uchun premium kreativ yechimlar yaratishga tayyormiz.
+
+</p>
+
+<a class="btn primary" href="https://t.me/creativoads" target="_blank">
+📩 Telegram
+</a>
+
+<a class="btn dark" href="tel:+998701651406">
+📞 +998 70 165 14 06
+</a>
+
+<a class="btn primary" href="https://wa.me/12895597765" target="_blank">
+💬 WhatsApp
+</a>
+
+</div>
+
+</div>
+
 </section>
 
 <footer>
-  © 2026 CreativoAds
+CreativoAds © 2026 — All Rights Reserved.
 </footer>
 
-<script>
-let lang = "en";
+<!-- LOADING SCREEN -->
 
-function toggleLang(){
-  if(lang === "en"){
-    document.getElementById("title").innerText = "Biz reklama orqali mijoz olib kelamiz";
-    document.getElementById("desc").innerText = "Sotuv olib keladigan landing page va bannerlar";
-    document.getElementById("services").innerText = "Xizmatlarimiz";
-    document.getElementById("contact").innerText = "Aloqa";
-    lang = "uz";
-  } else {
-    document.getElementById("title").innerText = "We Create Ads That Convert";
-    document.getElementById("desc").innerText = "High-converting landing pages and banner designs";
-    document.getElementById("services").innerText = "Our Services";
-    document.getElementById("contact").innerText = "Contact";
-    lang = "en";
-  }
+<div id="loader">
+<div class="loader-text">
+CreativoAds
+</div>
+</div>
+
+<!-- CUSTOM CURSOR -->
+
+<div class="cursor"></div>
+
+<!-- BACK TO TOP BUTTON -->
+
+<button id="topBtn">
+↑
+</button>
+
+<!-- CHATBOT BUTTON -->
+
+<button id="chat-toggle">
+🤖
+</button>
+
+<!-- CHATBOT -->
+
+<div id="chatbot" class="chat-closed">
+
+<div id="chat-header">
+CreativoAds Bot 🤖
+</div>
+
+<div id="chat-body">
+
+<p>
+<b>Bot:</b>
+Salom! Sizga qanday yordam beray?
+</p>
+
+</div>
+
+<input id="chat-input" placeholder="Xabar yozing..." />
+
+</div>
+<style>
+
+#loader{
+position:fixed;
+inset:0;
+
+background:#050816;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+z-index:99999;
+
+transition:.6s;
 }
+
+.loader-text{
+font-size:42px;
+font-weight:900;
+
+background:linear-gradient(90deg,#00d4ff,#ff3cac);
+-webkit-background-clip:text;
+color:transparent;
+
+animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+50%{
+transform:scale(1.08);
+}
+}
+
+.cursor{
+width:20px;
+height:20px;
+
+border:2px solid #00d4ff;
+border-radius:50%;
+
+position:fixed;
+
+pointer-events:none;
+
+z-index:9999;
+
+transform:translate(-50%,-50%);
+
+transition:.08s;
+}
+
+#topBtn{
+position:fixed;
+
+right:20px;
+bottom:20px;
+
+width:50px;
+height:50px;
+
+border:none;
+border-radius:50%;
+
+background:linear-gradient(135deg,#00d4ff,#7c3cff);
+
+color:white;
+
+font-size:22px;
+
+cursor:pointer;
+
+display:none;
+
+z-index:999;
+}
+
+#chat-toggle{
+position:fixed;
+
+right:20px;
+bottom:85px;
+
+width:58px;
+height:58px;
+
+border:none;
+border-radius:50%;
+
+background:linear-gradient(135deg,#00d4ff,#7c3cff);
+
+color:white;
+
+font-size:25px;
+
+cursor:pointer;
+
+z-index:10000;
+
+box-shadow:0 15px 45px #0008;
+}
+
+#chatbot{
+position:fixed;
+
+right:20px;
+bottom:150px;
+
+width:320px;
+
+background:#111827;
+
+border:1px solid #ffffff24;
+border-radius:22px;
+
+overflow:hidden;
+
+z-index:9999;
+
+box-shadow:0 20px 60px #0008;
+}
+
+#chatbot.chat-closed{
+display:none;
+}
+
+#chatbot.chat-open{
+display:block;
+}
+
+#chat-header{
+background:linear-gradient(135deg,#00d4ff,#7c3cff);
+
+padding:14px;
+
+font-weight:900;
+}
+
+#chat-body{
+height:220px;
+
+padding:14px;
+
+overflow-y:auto;
+
+font-size:14px;
+}
+
+#chat-input{
+width:100%;
+
+padding:14px;
+
+border:none;
+outline:none;
+
+background:#0b1020;
+
+color:white;
+}
+
+@media(max-width:600px){
+
+.cursor{
+display:none;
+}
+
+#chat-toggle{
+right:14px;
+bottom:82px;
+}
+
+#chatbot{
+width:90vw;
+right:5vw;
+bottom:150px;
+}
+
+}
+
+</style>
+
+<script>
+
+window.addEventListener("load",function(){
+
+setTimeout(function(){
+
+const loader =
+document.getElementById("loader");
+
+if(loader){
+
+loader.style.opacity = "0";
+
+setTimeout(function(){
+
+loader.style.display = "none";
+
+},600);
+
+}
+
+},900);
+
+});
+
+const cursor =
+document.querySelector(".cursor");
+
+document.addEventListener("mousemove",function(e){
+
+if(cursor){
+
+cursor.style.left = e.clientX + "px";
+cursor.style.top = e.clientY + "px";
+
+}
+
+});
+
+const topBtn =
+document.getElementById("topBtn");
+
+window.addEventListener("scroll",function(){
+
+if(topBtn){
+
+if(window.scrollY > 300){
+
+topBtn.style.display = "block";
+
+}else{
+
+topBtn.style.display = "none";
+
+}
+
+}
+
+});
+
+if(topBtn){
+
+topBtn.onclick = function(){
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+};
+
+}
+
+const chatToggle =
+document.getElementById("chat-toggle");
+
+const chatbotBox =
+document.getElementById("chatbot");
+
+if(chatToggle && chatbotBox){
+
+chatToggle.onclick = function(){
+
+chatbotBox.classList.toggle("chat-closed");
+chatbotBox.classList.toggle("chat-open");
+
+};
+
+}
+
+const chatInput =
+document.getElementById("chat-input");
+
+const chatBody =
+document.getElementById("chat-body");
+
+if(chatInput && chatBody){
+
+chatInput.addEventListener("keydown",function(e){
+
+if(e.key === "Enter" && chatInput.value.trim() !== ""){
+
+const original = chatInput.value;
+const msg = original.toLowerCase();
+
+chatBody.innerHTML +=
+`<p><b>Siz:</b> ${original}</p>`;
+
+let answer =
+"Telegram orqali yozing: @creativoads";
+
+if(
+msg.includes("narx") ||
+msg.includes("цена") ||
+msg.includes("price")
+){
+
+answer =
+"UZ: 650 000 / 1 950 000 / 3 900 000 so‘m. RU: 4 500 / 13 500 / 27 000 ₽. EN: $50 / $150 / $300.";
+
+}
+
+if(
+msg.includes("telegram")
+){
+
+answer =
+"Telegram: @creativoads";
+
+}
+
+if(
+msg.includes("whatsapp") ||
+msg.includes("watsap")
+){
+
+answer =
+"WhatsApp: +1 (289) 559-7765";
+
+}
+
+if(
+msg.includes("telefon") ||
+msg.includes("phone")
+){
+
+answer =
+"Telefon: +998 70 165 14 06";
+
+}
+
+if(
+msg.includes("xizmat") ||
+msg.includes("услуг") ||
+msg.includes("service")
+){
+
+answer =
+"Biz grafik dizayn, SMM, branding, web dizayn, video reklama va 3D effektlar qilamiz.";
+
+}
+
+setTimeout(function(){
+
+chatBody.innerHTML +=
+`<p><b>Bot:</b> ${answer}</p>`;
+
+chatBody.scrollTop =
+chatBody.scrollHeight;
+
+},350);
+
+chatInput.value = "";
+
+}
+
+});
+
+}
+
+document.querySelectorAll(".faq-q").forEach(function(button){
+
+button.onclick = function(){
+
+button.parentElement.classList.toggle("open");
+
+};
+
+});
+
+const menu =
+document.querySelector(".menu");
+
+const links =
+document.getElementById("links");
+
+if(menu && links){
+
+menu.onclick = function(){
+
+links.classList.toggle("open");
+
+};
+
+}
+
 </script>
 
 </body>
